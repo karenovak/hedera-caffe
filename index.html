@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hedera Caffé – příjemné místo pro dobrou kávu, něco sladkého a chvíle pohody v Českém Těšíně.">
+<title>Hedera Caffé | Český Těšín</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:#193d32;
+  --dark:#102b23;
+  --cream:#f6f2e9;
+  --gold:#c3a66d;
+  --ink:#26332d;
+  --muted:#777b72;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{
+  position:sticky;top:0;z-index:20;
+  height:82px;padding:0 7%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--dark);color:white;
+}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-size:25px}
+.brand span:first-child{
+  width:40px;height:40px;border:1px solid var(--gold);
+  color:var(--gold);border-radius:50%;display:grid;place-items:center;font-size:23px
+}
+.brand em{color:var(--gold);font-weight:400}
+nav{display:flex;gap:32px}
+nav a{font-size:13px;letter-spacing:1px;color:#eee;transition:.2s}
+nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:27px;cursor:pointer}
+.hero{
+  min-height:650px;display:flex;align-items:center;padding:80px 12%;
+  color:white;background:
+  linear-gradient(90deg,rgba(12,35,28,.91),rgba(12,35,28,.28)),
+  url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85') center/cover;
+}
+.hero-content{max-width:650px}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:400}
+.hero h1{font-size:clamp(48px,7vw,86px);line-height:1.08;margin:22px 0}
+.hero h1 em,.section-title em{color:var(--gold)}
+.hero p{font-size:18px;max-width:520px;color:#eee}
+.btn{
+  display:inline-block;margin-top:30px;padding:14px 27px;
+  background:var(--gold);color:var(--dark);font-size:12px;
+  font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  transition:.25s
+}
+.btn:hover{background:#dfc99c;transform:translateY(-2px)}
+section{scroll-margin-top:82px}
+.intro{max-width:850px;margin:auto;text-align:center;padding:105px 25px 90px}
+.section-title{font-size:clamp(34px,5vw,52px);line-height:1.2;color:var(--green);margin:15px 0 22px}
+.intro p:not(.eyebrow){color:var(--muted);font-size:16px}
+.features{padding:0 7% 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.feature{text-align:center}
+.feature-img{height:245px;background-size:cover;background-position:center}
+.img1{background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85')}
+.img2{background-image:url('https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85')}
+.img3{background-image:url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=85')}
+.feature h3{font-size:25px;color:var(--green);margin:18px 0 5px}
+.feature p{font-size:14px;color:var(--muted)}
+.band{
+  padding:90px 20px;text-align:center;color:white;
+  background:linear-gradient(rgba(16,43,35,.91),rgba(16,43,35,.91)),
+  url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=80') center/cover;
+}
+.band h2{font-size:clamp(34px,5vw,50px);margin:12px 0}
+.band p{color:#e1e2da;max-width:650px;margin:auto}
+.menu-section{padding:100px 8%;text-align:center}
+.menu-grid{max-width:1050px;margin:50px auto 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:left}
+.menu-card{background:#fffdf8;padding:35px 30px;border-top:3px solid var(--gold)}
+.menu-card h3{font-size:26px;color:var(--green);margin-bottom:12px}
+.menu-card p{font-size:14px;color:var(--muted)}
+.small-note{font-size:12px;color:var(--muted);margin-top:28px}
+.about{padding:100px 12%;display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-photo{
+  min-height:420px;background:url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=85') center/cover
+}
+.about-text p{color:var(--muted);margin:15px 0}
+.contact{padding:95px 8%;background:#eee9de;text-align:center}
+.contact-grid{max-width:850px;margin:45px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left}
+.contact-card{background:#fffdf8;padding:32px;border-top:3px solid var(--gold)}
+.contact-card h3{font-size:25px;color:var(--green);margin-bottom:12px}
+.contact-card p{font-size:15px;color:var(--muted)}
+.contact-card a{color:var(--green);font-weight:600}
+.map-link{display:inline-block;margin-top:12px;border-bottom:1px solid var(--gold);font-size:14px}
+footer{background:var(--dark);color:#eee;text-align:center;padding:48px 20px}
+footer .brand{justify-content:center;margin-bottom:18px}
+footer p{font-size:13px;color:#c6c9c1;margin:8px}
+footer a{color:#e1cc9b}
+footer small{display:block;margin-top:24px;color:#929b92;font-size:11px}
+@media(max-width:750px){
+ header{height:72px;padding:0 6%}
+ .menu-btn{display:block}
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:22px 7%;flex-direction:column;gap:20px}
+ nav.open{display:flex}
+ .hero{min-height:560px;padding:65px 8%}
+ .features,.menu-grid{grid-template-columns:1fr}
+ .features{padding:0 8% 75px;gap:42px}
+ .feature-img{height:250px}
+ .about{grid-template-columns:1fr;padding:75px 8%;gap:30px}
+ .about-photo{min-height:300px;grid-row:1}
+ .contact-grid{grid-template-columns:1fr}
+ .menu-section{padding:75px 8%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#domu" class="brand"><span>H</span><span>Hedera <em>Caffé</em></span></a>
+  <button class="menu-btn" aria-label="Otevřít navigaci">☰</button>
+  <nav>
+    <a href="#domu">DOMŮ</a>
+    <a href="#nabidka">NABÍDKA</a>
+    <a href="#onas">O NÁS</a>
+    <a href="#kontakt">KONTAKT</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="domu">
+  <div class="hero-content">
+    <div class="eyebrow">HEDERA CAFFÉ · ČESKÝ TĚŠÍN</div>
+    <h1>Malá chvíle.<br><em>Velká pohoda.</em></h1>
+    <p>Zastavte se na dobrou kávu, něco sladkého a příjemný okamžik jen pro sebe.</p>
+    <a href="#nabidka" class="btn">Objevte naši nabídku</a>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="eyebrow">VÍTEJTE U NÁS</div>
+  <h2 class="section-title">Místo, kde se<br><em>nikam nespěchá.</em></h2>
+  <p>Hedera Caffé je příjemné místo pro ranní kávu, odpolední setkání i malou sladkou pauzu během dne. Přijďte si užít chvíli klidu a pohody.</p>
+</section>
+
+<section class="features">
+  <article class="feature">
+    <div class="feature-img img1"></div>
+    <h3>Dobrá káva</h3>
+    <p>Voňavá káva, která zpříjemní každý den.</p>
+  </article>
+  <article class="feature">
+    <div class="feature-img img2"></div>
+    <h3>Něco na zub</h3>
+    <p>Něco dobrého ke své oblíbené kávě.</p>
+  </article>
+  <article class="feature">
+    <div class="feature-img img3"></div>
+    <h3>Chvíle pro sebe</h3>
+    <p>Útulné prostředí pro setkání i odpočinek.</p>
+  </article>
+</section>
+
+<section class="band">
+  <div class="eyebrow">VAŠE KAVÁRNÁ V ČESKÉM TĚŠÍNĚ</div>
+  <h2>Každý den si zaslouží<br>malou radost.</h2>
+  <p>Dobrá káva, příjemná atmosféra a chvíle, na které si uděláte čas. Těšíme se na vás.</p>
+</section>
+
+<section class="menu-section" id="nabidka">
+  <div class="eyebrow">CO SI U NÁS VYCHUTNÁTE</div>
+  <h2 class="section-title">Naše nabídka</h2>
+  <p style="color:var(--muted)">Vyberte si svou oblíbenou chvíli.</p>
+  <div class="menu-grid">
+    <article class="menu-card">
+      <h3>Káva</h3>
+      <p>Espresso, cappuccino, latte a další kávové speciality.</p>
+    </article>
+    <article class="menu-card">
+      <h3>Horké nápoje</h3>
+      <p>Matcha, horká čokoláda, čaj a další příjemné zahřátí.</p>
+    </article>
+    <article class="menu-card">
+      <h3>Něco dobrého</h3>
+      <p>Sladké dobroty a drobné občerstvení podle aktuální nabídky.</p>
+    </article>
+  </div>
+  <p class="small-note">Aktuální sortiment a ceny se mohou měnit. Ověřte si je prosím přímo v kavárně.</p>
+</section>
+
+<section class="about" id="onas">
+  <div class="about-text">
+    <div class="eyebrow">NĚCO MÁLO O NÁS</div>
+    <h2 class="section-title">Káva chutná nejlépe <em>v příjemné společnosti.</em></h2>
+    <p>Hedera Caffé je kavárna v Českém Těšíně, kam můžete přijít zpomalit, popovídat si nebo si jen vychutnat svůj oblíbený nápoj.</p>
+    <p>Věříme, že i obyčejná kávová pauza může být malým příjemným zážitkem.</p>
+    <a href="#kontakt" class="btn">Kde nás najdete</a>
+  </div>
+  <div class="about-photo"></div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="eyebrow">TĚŠÍME SE NA VÁS</div>
+  <h2 class="section-title">Najdete nás v<br><em>Českém Těšíně.</em></h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Navštivte nás</h3>
+      <p>Hedera Caffé</p>
+      <p>Odboje 24/4<br>Český Těšín</p>
+      <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Odboje+24%2F4+%C4%8Cesk%C3%BD+T%C4%9B%C5%A1%C3%ADn">Otevřít navigaci →</a>
+    </div>
+    <div class="contact-card">
+      <h3>Kontaktujte nás</h3>
+      <p>Telefonicky nás zastihnete na:</p>
+      <p><a href="tel:+420603185918">+420 603 185 918</a></p>
+      <p class="small-note">Otevírací dobu doporučujeme před návštěvou ověřit telefonicky.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a href="#domu" class="brand"><span>H</span><span>Hedera <em>Caffé</em></span></a>
+  <p>Odboje 24/4, Český Těšín</p>
+  <p><a href="tel:+420603185918">+420 603 185 918</a></p>
+  <small>© <span id="year"></span> Hedera Caffé. Všechna práva vyhrazena.</small>
+</footer>
+
+<script>
+document.querySelector('.menu-btn').addEventListener('click',function(){
+  document.querySelector('nav').classList.toggle('open');
+});
+document.querySelectorAll('nav a').forEach(function(link){
+  link.addEventListener('click',function(){
+    document.querySelector('nav').classList.remove('open');
+  });
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
